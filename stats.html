@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+#content{
+
+	margin: 0 auto;
+}
+
+h1{
+	display: inline;
+}
+
+</style>
+
+</head>
+<body>
+<form method='get' action='results'> 
+	<input type="text" id='search' name='url'><br><br>
+	<input id='go' type="submit" value="Submit">
+</form>
+<div id='content'>
+	<h1> Title: </h1> {{ title }}<br>
+	<h1> Characters: </h1>{{ characters  }} <br>
+	<h1> Words: </h1> {{ words }} <br>
+	<h1> Number of Links:</h1> {{ link_number }}<br>
+	{% for link in links %}
+		<a href={{ link }}> {{ link }}</a><br>
+
+	{% endfor %}
+</div>
+
+</body>
+</html>
